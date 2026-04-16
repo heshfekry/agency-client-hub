@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { parseAIResponse, type ScorecardResult } from "@/lib/scorecard-engine";
+import type { Json } from "@/integrations/supabase/types";
 import type { MCQAnswers } from "@/components/ScorecardForm";
 import type { GateData } from "@/components/GateModal";
 
@@ -117,14 +118,14 @@ const Index = () => {
 
       // Step 3: Persist assessment (best-effort)
       try {
-        await supabase.from("assessments").insert({
+        await supabase.from("assessments").insert([{
           url,
-          answers: answers as unknown as Record<string, unknown>,
-          results: result as unknown as Record<string, unknown>,
+          answers: answers as unknown as Json,
+          results: result as unknown as Json,
           overall_score: result.overallScore,
           gate_answer: gateAnswer || null,
           gate_role: gateRole || null,
-        });
+        }]);
       } catch (_) {}
 
       setScorecardView("results");
