@@ -14,7 +14,63 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      assessments: {
+        Row: {
+          answers: Json
+          created_at: string
+          gate_answer: string | null
+          gate_role: string | null
+          id: string
+          overall_score: number
+          results: Json
+          url: string
+        }
+        Insert: {
+          answers: Json
+          created_at?: string
+          gate_answer?: string | null
+          gate_role?: string | null
+          id?: string
+          overall_score: number
+          results: Json
+          url: string
+        }
+        Update: {
+          answers?: Json
+          created_at?: string
+          gate_answer?: string | null
+          gate_role?: string | null
+          id?: string
+          overall_score?: number
+          results?: Json
+          url?: string
+        }
+        Relationships: []
+      }
+      gate_responses: {
+        Row: {
+          answer: string
+          created_at: string
+          id: string
+          role: string
+          structured_answer: string | null
+        }
+        Insert: {
+          answer: string
+          created_at?: string
+          id?: string
+          role: string
+          structured_answer?: string | null
+        }
+        Update: {
+          answer?: string
+          created_at?: string
+          id?: string
+          role?: string
+          structured_answer?: string | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
