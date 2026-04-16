@@ -119,8 +119,8 @@ const Index = () => {
       try {
         await supabase.from("assessments").insert([{
           url,
-          answers: answers as unknown as Record<string, unknown>,
-          results: result as unknown as Record<string, unknown>,
+          answers: answers as unknown as Json,
+          results: result as unknown as Json,
           overall_score: result.overallScore,
           gate_answer: gateAnswer || null,
           gate_role: gateRole || null,
