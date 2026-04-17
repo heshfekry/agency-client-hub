@@ -1,1 +1,4 @@
 project_id = "nmuwyvrvffstkhnrupwo"
+
+[functions.gate-insights]
+verify_jwt = false
