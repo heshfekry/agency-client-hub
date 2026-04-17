@@ -13,7 +13,8 @@ import AdoptionChart from "@/components/AdoptionChart";
 import FutureChart from "@/components/FutureChart";
 import QuotesSection from "@/components/QuotesSection";
 import TechBars from "@/components/TechBars";
-import ScorecardBridge from "@/components/ScorecardBridge";
+import CommunityInsights from "@/components/CommunityInsights";
+import StickyScorecardCTA from "@/components/StickyScorecardCTA";
 import GateModal from "@/components/GateModal";
 import { ScorecardForm } from "@/components/ScorecardForm";
 import { ScorecardResults } from "@/components/ScorecardResults";
@@ -153,18 +154,14 @@ const Index = () => {
       {/* ── Act 1: Dashboard ── */}
       <Hero />
 
-      <main className="mx-auto max-w-[900px] px-4 pb-20 pt-8 space-y-10">
+      <main className="mx-auto max-w-[900px] px-4 pb-32 pt-8 space-y-10">
         <MetricCards />
         <DonutCharts />
         <AdoptionChart />
         <FutureChart />
         <QuotesSection />
         <TechBars />
-
-        {/* ── Bridge ── */}
-        {scorecardView === "hidden" && (
-          <ScorecardBridge onStart={handleScorecardStart} />
-        )}
+        <CommunityInsights />
 
         {/* ── Act 2: Scorecard ── */}
         {scorecardView !== "hidden" && (
@@ -196,6 +193,11 @@ const Index = () => {
           </div>
         )}
       </main>
+
+      <StickyScorecardCTA
+        onStart={handleScorecardStart}
+        visible={!gateOpen && scorecardView === "hidden"}
+      />
     </div>
   );
 };
