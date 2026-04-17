@@ -33,9 +33,6 @@ const metrics: MetricCardProps[] = [
 
 const MetricCards = () => (
   <div>
-    <div className="mb-1.5 font-body text-[10px] font-bold uppercase tracking-[0.12em]" style={{ color: 'hsl(var(--cxl-text-faint))' }}>
-      Client expectations · Wynter panel, n=15
-    </div>
     <div className="mb-10 grid grid-cols-2 gap-3 md:grid-cols-4">
       {metrics.map((m, i) => (
         <MetricCard key={i} {...m} />

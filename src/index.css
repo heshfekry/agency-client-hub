@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400;1,700&family=Work+Sans:ital,wght@0,400;0,700;0,900;1,900&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -56,7 +56,7 @@
     --cxl-text-muted: 50 5% 35%;
     --cxl-text-faint: 50 5% 57%;
 
-    --font-display: 'Lato', Arial, sans-serif;
+    --font-display: 'Work Sans', Arial, sans-serif;
     --font-body: 'Lato', Arial, sans-serif;
 
     /* Scorecard score colours */
@@ -82,8 +82,12 @@
   }
   body {
     @apply bg-background text-foreground;
-    font-family: var(--font-display);
+    font-family: var(--font-body);
     -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, h4, h5, h6, .font-display {
+    font-family: var(--font-display);
+    font-weight: 900;
   }
 }
 

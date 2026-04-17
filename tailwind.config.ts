@@ -14,7 +14,7 @@ export default {
     },
     extend: {
       fontFamily: {
-        display: ['Lato', 'Arial', 'sans-serif'],
+        display: ['Work Sans', 'Arial', 'sans-serif'],
         body: ['Lato', 'Arial', 'sans-serif'],
       },
       colors: {

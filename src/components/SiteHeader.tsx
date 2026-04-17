@@ -4,9 +4,11 @@ const SiteHeader = () => (
       href="https://cxl.com"
       target="_blank"
       rel="noopener"
-      className="flex h-9 w-16 items-center justify-center rounded bg-cxl-cyan"
+      className="flex h-9 items-center justify-center rounded bg-cxl-cyan px-2.5"
     >
-      <span className="font-body text-lg font-black tracking-tight text-cxl-red">CXL</span>
+      <span className="font-display text-[22px] font-black leading-none tracking-tight text-cxl-red">
+        <span className="italic">C</span>XL
+      </span>
     </a>
     <a
       href="https://cxl.com"

@@ -27,9 +27,6 @@ export function ScorecardResults({ result, url, onReset }: ScorecardResultsProps
 
       {/* Header */}
       <div className="bg-card rounded-xl p-6 md:p-8 shadow-lg text-center space-y-3">
-        <div className="mb-1 font-body text-[10px] font-bold uppercase tracking-[0.12em]" style={{ color: 'hsl(var(--cxl-text-faint))' }}>
-          Benchmarked against Wynter research · n=15 agency leaders + 15 in-house leaders
-        </div>
         <h2 className="text-2xl md:text-3xl font-black text-card-foreground tracking-tight">
           AI Readiness Scorecard
         </h2>
