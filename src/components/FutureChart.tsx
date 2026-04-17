@@ -11,8 +11,7 @@ const data = [
 
 const FutureChart = () => (
   <div className="mb-5 rounded-[10px] border border-border bg-card p-6">
-    <div className="mb-0.5 font-display text-base font-normal text-foreground">What will agencies primarily become in 3 years?</div>
-    <div className="mb-5 font-body text-[11px]" style={{ color: 'hsl(var(--cxl-text-faint))' }}>Wynter panel, n=15 agency leaders</div>
+    <div className="mb-5 font-display text-base font-normal text-foreground">What will agencies primarily become in 3 years?</div>
     <div className="grid grid-cols-1 items-center gap-5 md:grid-cols-2">
       <div className="h-[230px]">
         <ResponsiveContainer width="100%" height="100%">
@@ -20,7 +19,7 @@ const FutureChart = () => (
             <Pie data={data} dataKey="value" nameKey="name" cx="50%" cy="50%" innerRadius="50%" outerRadius="80%" strokeWidth={2} stroke="hsl(var(--cxl-cream))">
               {data.map((d, i) => <Cell key={i} fill={d.color} />)}
             </Pie>
-            <Tooltip formatter={(value: number, name: string) => [`${value}`, name]} contentStyle={{ fontFamily: 'Inter', fontSize: 12 }} />
+            <Tooltip formatter={(value: number, name: string) => [`${Math.round((value / 15) * 100)}%`, name]} contentStyle={{ fontFamily: 'Inter', fontSize: 12 }} />
           </PieChart>
         </ResponsiveContainer>
       </div>
