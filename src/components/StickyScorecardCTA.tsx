@@ -23,7 +23,7 @@ const StickyScorecardCTA = ({ onStart, visible }: StickyScorecardCTAProps) => (
         </div>
         <button
           onClick={onStart}
-          className="inline-flex shrink-0 items-center gap-2 rounded-lg bg-primary px-5 py-2.5 font-body text-sm font-bold text-primary-foreground transition hover:bg-primary/90 md:px-7 md:py-3"
+          className="inline-flex shrink-0 items-center gap-2 rounded-lg bg-cxl-red px-5 py-2.5 font-body text-sm font-bold text-primary-foreground transition hover:bg-cxl-red/90 md:px-7 md:py-3"
         >
           Score my agency
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">

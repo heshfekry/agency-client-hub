@@ -66,26 +66,35 @@ const categories: QuoteCategory[] = [
 const QuotesSection = () => (
   <div>
     <hr className="my-10 border-t border-border" />
-    <h2 className="mb-1 font-display text-[22px] font-normal text-foreground">Voices from the survey</h2>
+    <h2 className="mb-1 font-display text-[22px] text-foreground">Voices from the survey</h2>
     <p className="mb-7 font-body text-[13px] text-muted-foreground">
       What agency leaders and clients are actually saying — in their own words
     </p>
 
-    {categories.map((cat) => (
-      <div key={cat.heading}>
-        <div className="mb-2.5 mt-7 flex items-center gap-2.5 font-body text-[10px] font-bold uppercase tracking-[0.12em]" style={{ color: 'hsl(var(--cxl-text-faint))' }}>
-          {cat.heading}
-          <span className="h-px flex-1 bg-border" />
+    <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-5">
+      {categories.map((cat) => (
+        <div key={cat.heading} className="flex flex-col">
+          <div
+            className="mb-3 font-display text-[12px] uppercase tracking-[0.08em] leading-tight"
+            style={{ color: cat.textColor }}
+          >
+            {cat.heading}
+          </div>
+          <div className="flex flex-col gap-2.5">
+            {cat.quotes.map((q, i) => (
+              <div key={i} className={`rounded-lg p-3 ${cat.bgClass}`}>
+                <p
+                  className="font-body text-[12px] italic leading-relaxed"
+                  style={{ color: cat.textColor }}
+                >
+                  {q}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
-        <div className="grid grid-cols-1 gap-2.5 md:grid-cols-2">
-          {cat.quotes.map((q, i) => (
-            <div key={i} className={`rounded-lg p-4 ${cat.bgClass}`}>
-              <p className="font-display text-[13px] italic leading-relaxed" style={{ color: cat.textColor }}>{q}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    ))}
+      ))}
+    </div>
   </div>
 );
 

@@ -300,7 +300,7 @@ export function ScorecardForm({ onSubmit, isLoading }: ScorecardFormProps) {
         <p className="text-xs text-muted-foreground font-bold uppercase tracking-wider">
           Step {step + 1} of {steps.length}
         </p>
-        <h2 className="text-xl font-black text-card-foreground tracking-tight">{currentStep.title}</h2>
+        <h2 className="font-display text-xl text-card-foreground tracking-tight">{currentStep.title}</h2>
         {"subtitle" in currentStep && currentStep.subtitle && (
           <p className="text-sm text-muted-foreground">{currentStep.subtitle}</p>
         )}
