@@ -5,7 +5,7 @@ const Hero = () => (
         AI's impact on <em className="italic text-cxl-cyan">agencies</em>
       </h1>
       <p className="max-w-[520px] font-body text-sm leading-relaxed" style={{ color: 'rgba(255,255,255,0.5)' }}>
-        How AI is changing client expectations for agencies — and how agencies are adapting. Survey of CMOs, founders, and agency directors.
+        How AI is changing client expectations for agencies — and how agencies are adapting. Insights from CMOs, founders, and agency directors.
       </p>
     </div>
   </section>
