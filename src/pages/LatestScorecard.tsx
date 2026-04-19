@@ -36,10 +36,14 @@ const LatestScorecard = () => {
           return;
         }
 
-        const parsedResult = {
-          ...(latestRow.results as ScorecardResult),
-          overallScore:
-            (latestRow.results as Partial<ScorecardResult>)?.overallScore ?? Number(latestRow.overall_score) ?? 0,
+        const rawResults = latestRow.results as unknown as Partial<ScorecardResult>;
+        const parsedResult: ScorecardResult = {
+          overallScore: rawResults.overallScore ?? Number(latestRow.overall_score) ?? 0,
+          dimensions: rawResults.dimensions ?? [],
+          observations: rawResults.observations ?? [],
+          gaps: rawResults.gaps ?? [],
+          warnings: rawResults.warnings ?? [],
+          quickWins: rawResults.quickWins ?? [],
         };
 
         if (!cancelled) {
