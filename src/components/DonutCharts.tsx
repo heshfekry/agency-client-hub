@@ -48,8 +48,8 @@ const serviceData = [
 
 const DonutCharts = () => (
   <div className="mb-5 grid grid-cols-1 gap-5 md:grid-cols-2">
-    <DonutPanel title="How often clients ask about AI" subtitle="Wynter panel, n=15 agency leaders" data={freqData} total={15} />
-    <DonutPanel title="Have services changed because of AI?" subtitle="Wynter panel, n=15 agency leaders" data={serviceData} total={15} />
+    <DonutPanel title="How often clients ask about AI" subtitle="Share of agency leaders surveyed" data={freqData} total={15} />
+    <DonutPanel title="Have services changed because of AI?" subtitle="Share of agency leaders surveyed" data={serviceData} total={15} />
   </div>
 );
 

@@ -6,6 +6,7 @@ import { ArrowRight, Loader2 } from "lucide-react";
 export interface MCQAnswers {
   teamSize: string;
   services: string[];
+  otherService?: string;
   aiToolUsage: string;
   aiInWorkflows: string;
   aiOnWebsite: string;
@@ -26,7 +27,9 @@ const TEAM_SIZES = ["Solo / freelancer", "2–5 people", "6–15 people", "16–
 const SERVICE_OPTIONS = [
   "Content marketing", "SEO", "Paid media / PPC", "Brand / creative",
   "Web design / dev", "Social media", "Strategy / consulting", "PR / comms",
+  "CRO", "Demand generation", "Analytics", "AI workflows",
 ];
+const OTHER_SERVICE = "Other";
 
 const AI_TOOL_USAGE = [
   "No one uses AI tools yet",
@@ -129,10 +132,12 @@ export function ScorecardForm({ onSubmit, isLoading }: ScorecardFormProps) {
   const [url, setUrl] = useState("");
   const [step, setStep] = useState(0);
   const [answers, setAnswers] = useState<MCQAnswers>({
-    teamSize: "", services: [], aiToolUsage: "", aiInWorkflows: "",
+    teamSize: "", services: [], otherService: "", aiToolUsage: "", aiInWorkflows: "",
     aiOnWebsite: "", pricingModel: "", aiServices: "",
     clientAskFrequency: "", headcountChange: "", roiMeasurement: "",
   });
+
+  const otherSelected = answers.services.includes(OTHER_SERVICE);
 
   const steps = [
     {
@@ -164,19 +169,33 @@ export function ScorecardForm({ onSubmit, isLoading }: ScorecardFormProps) {
       title: "What services do you offer?",
       subtitle: "Select all that apply",
       content: (
-        <div className="flex flex-wrap gap-2">
-          {SERVICE_OPTIONS.map((svc) => (
-            <MultiSelectButton key={svc} label={svc} selected={answers.services.includes(svc)}
-              onClick={() => setAnswers((a) => ({
-                ...a,
-                services: a.services.includes(svc)
-                  ? a.services.filter((s) => s !== svc)
-                  : [...a.services, svc],
-              }))} />
-          ))}
+        <div className="space-y-3">
+          <div className="flex flex-wrap gap-2">
+            {[...SERVICE_OPTIONS, OTHER_SERVICE].map((svc) => (
+              <MultiSelectButton key={svc} label={svc} selected={answers.services.includes(svc)}
+                onClick={() => setAnswers((a) => ({
+                  ...a,
+                  services: a.services.includes(svc)
+                    ? a.services.filter((s) => s !== svc)
+                    : [...a.services, svc],
+                  otherService: svc === OTHER_SERVICE && a.services.includes(svc) ? "" : a.otherService,
+                }))} />
+            ))}
+          </div>
+          {otherSelected && (
+            <Input
+              placeholder="Tell us what other services you offer"
+              value={answers.otherService ?? ""}
+              onChange={(e) => setAnswers((a) => ({ ...a, otherService: e.target.value }))}
+              className="h-11 bg-card border-input text-sm"
+              autoFocus
+            />
+          )}
         </div>
       ),
-      valid: answers.services.length > 0,
+      valid:
+        answers.services.length > 0 &&
+        (!otherSelected || (answers.otherService ?? "").trim().length > 0),
     },
     {
       title: "How widely does your team use AI tools?",
