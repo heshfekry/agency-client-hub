@@ -31,33 +31,33 @@ const BENCHMARKS: Record<string, string> = {
   pricingModel: "Leading agencies moving to value-based and retainer models; hourly billing signals commoditization risk to buyers",
 };
 
-// Stats shown in the benchmark panels on each dimension card in the results view.
-// These mirror what is shown in the dashboard so users see the same evidence twice.
+// Stats shown alongside each recommendation in the results view.
+// These mirror the dashboard so users see the same evidence at decision time.
 export const BENCHMARK_STATS: Record<string, BenchmarkStat[]> = {
   clientCommunication: [
-    { stat: "44% of clients demand that agencies disclose how they use AI", source: "Wynter panel, n=15" },
-    { stat: "40% actively evaluate agency AI adoption before engaging", source: "Wynter panel, n=15" },
-    { stat: "31% of in-house leaders now use AI adoption as an agency selection criterion", source: "Wynter panel, n=15" },
+    { stat: "44% of clients demand that agencies disclose how they use AI", source: "" },
+    { stat: "40% actively evaluate agency AI adoption before engaging", source: "" },
+    { stat: "31% of in-house leaders now use AI adoption as an agency selection criterion", source: "" },
   ],
   teamAdoption: [
-    { stat: "7 of 15 agency leaders have made AI use mandatory for all staff", source: "Wynter panel, n=15" },
-    { stat: "AI amplifies skill gaps in junior staff — senior-over-junior recomposition is the dominant structural shift", source: "Wynter panel, n=15" },
-    { stat: "60% of agency founders have stopped filling junior roles they previously would have hired", source: "Growth Syndicate, n=110" },
+    { stat: "Roughly half of agency leaders have made AI use mandatory for all staff", source: "" },
+    { stat: "AI amplifies skill gaps in junior staff — senior-over-junior recomposition is the dominant structural shift", source: "" },
+    { stat: "60% of agency founders have stopped filling junior roles they previously would have hired", source: "" },
   ],
   workflowAutomation: [
-    { stat: "Content creation 60% faster; scripts from 8-16 hours to under 2 hours", source: "Wynter agency survey, n=15" },
-    { stat: "Client onboarding compressed from weeks to days; audits from months to minutes", source: "Wynter agency survey, n=15" },
-    { stat: "Proposals cut from 3-4 hours to under 1 hour at agencies with strong workflow automation", source: "Growth Syndicate, n=110" },
+    { stat: "Content creation 60% faster; scripts from 8-16 hours to under 2 hours", source: "" },
+    { stat: "Client onboarding compressed from weeks to days; audits from months to minutes", source: "" },
+    { stat: "Proposals cut from 3-4 hours to under 1 hour at agencies with strong workflow automation", source: "" },
   ],
   servicePositioning: [
-    { stat: "53% of clients now engage agencies for strategy and direction, not production", source: "Wynter working with agencies, n=15" },
-    { stat: "38% of in-house leaders explicitly repositioned agency value toward strategic judgment", source: "Wynter working with agencies, n=15" },
-    { stat: "56% reported pulling specific production tasks in-house using AI", source: "Wynter working with agencies, n=15" },
+    { stat: "53% of clients now engage agencies for strategy and direction, not production", source: "" },
+    { stat: "38% of in-house leaders explicitly repositioned agency value toward strategic judgment", source: "" },
+    { stat: "56% reported pulling specific production tasks in-house using AI", source: "" },
   ],
   pricingModel: [
-    { stat: "Hourly billing is the pricing model most associated with commoditization risk", source: "Wynter + Growth Syndicate" },
-    { stat: "Leading agencies shifting to retainers, value-based, and productized fixed-scope packages", source: "Wynter agency survey, n=15" },
-    { stat: "Clients expect AI to lower agency costs — hourly models invite direct price pressure", source: "Wynter working with agencies, n=15" },
+    { stat: "Hourly billing is the pricing model most associated with commoditization risk", source: "" },
+    { stat: "Leading agencies shifting to retainers, value-based, and productized fixed-scope packages", source: "" },
+    { stat: "Clients expect AI to lower agency costs — hourly models invite direct price pressure", source: "" },
   ],
 };
 
@@ -71,11 +71,11 @@ const DIMENSION_NAMES: Record<string, { name: string; shortName: string }> = {
 
 // Gap benchmark callouts shown inline in the gap cards
 export const GAP_BENCHMARK: Record<string, string> = {
-  clientCommunication: "44% of clients demand AI transparency — Wynter panel, n=15",
-  teamAdoption: "Half of agency leaders say AI proficiency is non-negotiable for all staff — Wynter panel, n=15",
-  workflowAutomation: "Leading agencies report proposals cut to under 1 hour — Growth Syndicate, n=110",
-  servicePositioning: "53% of clients engage agencies for strategy, not production — Wynter working with agencies, n=15",
-  pricingModel: "Hourly billing is the model most exposed to commoditization — Wynter + Growth Syndicate",
+  clientCommunication: "44% of clients demand AI transparency before engaging an agency.",
+  teamAdoption: "Half of agency leaders say AI proficiency is now non-negotiable for all staff.",
+  workflowAutomation: "Leading agencies have cut proposal turnaround to under 1 hour.",
+  servicePositioning: "53% of clients now engage agencies for strategy, not production.",
+  pricingModel: "Hourly billing is the model most exposed to AI commoditization pressure.",
 };
 
 export function parseAIResponse(aiData: any): ScorecardResult {

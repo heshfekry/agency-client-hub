@@ -90,7 +90,7 @@ const GateModal = ({ open, onUnlock }: GateModalProps) => {
             {step === 3 && role && FOLLOW_UP_LABEL[role]}
           </DialogTitle>
           <DialogDescription className="font-body text-sm text-muted-foreground">
-            {step === 1 && 'Answer two quick questions to access the data and your scorecard.'}
+            {step === 1 && 'Answer a few quick questions to access the data and your scorecard.'}
             {step === 2 && 'Share your perspective to unlock the dashboard.'}
             {step === 3 && 'One more — then your access opens.'}
           </DialogDescription>

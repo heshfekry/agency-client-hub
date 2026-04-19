@@ -1,9 +1,3 @@
-// Stats corrected against the Wynter "working with agencies" AI summary (n=15/16):
-// 56% = 9 of 16 pulling production work in-house
-// 44% = 7 of 16 expecting faster delivery / more output at same/lower cost
-// 31% = 5 of 16 evaluating agencies on AI adoption criteria
-// 38% = 6 of 16 repositioning agency value toward strategy/expertise
-
 interface MetricCardProps {
   label: string;
   value: string;

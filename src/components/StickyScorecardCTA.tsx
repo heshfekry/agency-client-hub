@@ -18,7 +18,7 @@ const StickyScorecardCTA = ({ onStart, visible }: StickyScorecardCTAProps) => (
             How does your agency compare?
           </div>
           <div className="hidden font-body text-[12px] text-muted-foreground md:block">
-            7 questions · scored breakdown with specific actions
+            Scored breakdown with specific, prioritized actions
           </div>
         </div>
         <button
