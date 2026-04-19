@@ -71,6 +71,45 @@ export type Database = {
         }
         Relationships: []
       }
+      top_agencies: {
+        Row: {
+          anonymous_label: string
+          created_at: string
+          dimension_scores: Json
+          gaps: string[]
+          id: string
+          overall_score: number
+          raw_analysis: Json | null
+          region: string
+          services: string[]
+          strengths: string[]
+        }
+        Insert: {
+          anonymous_label: string
+          created_at?: string
+          dimension_scores?: Json
+          gaps?: string[]
+          id?: string
+          overall_score: number
+          raw_analysis?: Json | null
+          region: string
+          services?: string[]
+          strengths?: string[]
+        }
+        Update: {
+          anonymous_label?: string
+          created_at?: string
+          dimension_scores?: Json
+          gaps?: string[]
+          id?: string
+          overall_score?: number
+          raw_analysis?: Json | null
+          region?: string
+          services?: string[]
+          strengths?: string[]
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
