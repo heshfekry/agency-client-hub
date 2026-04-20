@@ -44,6 +44,13 @@ const Index = () => {
     } catch (_) {}
   };
 
+  const handleResetGate = () => {
+    localStorage.removeItem(GATE_KEY);
+    sessionStorage.removeItem(GATE_DATA_KEY);
+    setGateUnlocked(false);
+    setGateOpen(true);
+  };
+
   return (
     <div className="min-h-screen bg-background">
       <GateModal open={gateOpen} onUnlock={handleGateUnlock} />
@@ -66,6 +73,16 @@ const Index = () => {
         onStart={() => navigate("/scorecard")}
         visible={!gateOpen}
       />
+
+      {gateUnlocked && !gateOpen && (
+        <button
+          onClick={handleResetGate}
+          className="fixed bottom-4 left-4 z-40 rounded-full border border-border/60 bg-card/90 px-3 py-1.5 font-body text-xs text-muted-foreground shadow-sm backdrop-blur transition-colors hover:text-foreground"
+          aria-label="Reset gate modal"
+        >
+          Reset gate
+        </button>
+      )}
     </div>
   );
 };
